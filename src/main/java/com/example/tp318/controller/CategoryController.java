@@ -4,7 +4,9 @@ import com.example.tp318.model.Category;
 import com.example.tp318.service.CategoryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/categories")
@@ -28,7 +30,11 @@ public class CategoryController {
     }
 
     @PostMapping("/save")
-    public String saveCategory(@ModelAttribute Category category) {
+    public String saveCategory(@ModelAttribute @Valid Category category, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("category", category);
+            return "categories/form";
+        }
         categoryService.saveCategory(category);
         return "redirect:/categories";
     }
