@@ -16,6 +16,7 @@
         <div class="mb-3">
             <label for="nomCategory" class="form-label">Nom de la catégorie</label>
             <input type="text" class="form-control" id="nomCategory" th:field="*{nomCategory}" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('nomCategory')}" th:errors="*{nomCategory}"></div>
         </div>
         <button type="submit" class="btn btn-success">Enregistrer</button>
         <a th:href="@{/categories}" class="btn btn-secondary">Annuler</a>

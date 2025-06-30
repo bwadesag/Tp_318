@@ -12,10 +12,12 @@
         <div class="mb-3">
             <label for="nomProduit" class="form-label">Nom du produit</label>
             <input type="text" class="form-control" id="nomProduit" th:field="*{nomProduit}" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('nomProduit')}" th:errors="*{nomProduit}"></div>
         </div>
         <div class="mb-3">
             <label for="prixProduit" class="form-label">Prix</label>
             <input type="number" class="form-control" id="prixProduit" th:field="*{prixProduit}" min="0" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('prixProduit')}" th:errors="*{prixProduit}"></div>
         </div>
         <div class="mb-3">
             <label for="dateExpiration" class="form-label">Date d'expiration</label>
