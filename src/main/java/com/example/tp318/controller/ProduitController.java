@@ -1,7 +1,6 @@
 package com.example.tp318.controller;
 
 import com.example.tp318.model.Produit;
-import com.example.tp318.model.Category;
 import com.example.tp318.service.ProduitService;
 import com.example.tp318.service.CategoryService;
 import org.springframework.stereotype.Controller;
@@ -37,7 +36,7 @@ public class ProduitController {
     }
 
     @PostMapping("/save")
-    public String saveProduit(@ModelAttribute @Valid Produit produit, BindingResult result, Model model) {
+    public String saveProduit(@ModelAttribute Produit produit, BindingResult result, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("produit", produit);
             model.addAttribute("categories", categoryService.getAllCategories());

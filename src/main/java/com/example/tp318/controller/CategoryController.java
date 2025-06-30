@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/categories")
@@ -30,7 +29,7 @@ public class CategoryController {
     }
 
     @PostMapping("/save")
-    public String saveCategory(@ModelAttribute @Valid Category category, BindingResult result, Model model) {
+    public String saveCategory(@ModelAttribute Category category, BindingResult result, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("category", category);
             return "categories/form";

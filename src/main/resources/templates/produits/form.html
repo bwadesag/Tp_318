@@ -9,6 +9,8 @@
 <div class="container mt-4">
     <h2 th:text="${produit.idProduit == null} ? 'Ajouter un produit' : 'Modifier le produit'"></h2>
     <form th:action="@{/produits/save}" th:object="${produit}" method="post">
+        <input type="hidden" th:field="*{idProduit}">
+        
         <div class="mb-3">
             <label for="nomProduit" class="form-label">Nom du produit</label>
             <input type="text" class="form-control" id="nomProduit" th:field="*{nomProduit}" required>

@@ -1,0 +1,13 @@
+com\example\tp318\model\Produit.class
+com\example\tp318\service\ProduitService.class
+com\example\tp318\service\CategoryServiceImpl.class
+com\example\tp318\controller\AccueilController.class
+com\example\tp318\Tp318Application.class
+com\example\tp318\controller\TestController.class
+com\example\tp318\controller\CategoryController.class
+com\example\tp318\repository\CategoryRepository.class
+com\example\tp318\service\ProduitServiceImpl.class
+com\example\tp318\repository\ProduitRepository.class
+com\example\tp318\controller\ProduitController.class
+com\example\tp318\service\CategoryService.class
+com\example\tp318\model\Category.class
