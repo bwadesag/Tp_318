@@ -3,6 +3,9 @@ package com.example.tp318.model;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.UUID;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 public class Produit {
@@ -10,9 +13,12 @@ public class Produit {
     @GeneratedValue
     private UUID idProduit;
 
+    @NotBlank(message = "Le nom du produit est obligatoire")
     @Column(nullable = false)
     private String nomProduit;
 
+    @NotNull(message = "Le prix est obligatoire")
+    @PositiveOrZero(message = "Le prix doit être positif ou nul")
     @Column(nullable = false)
     private Integer prixProduit;
 

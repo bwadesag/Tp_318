@@ -2,12 +2,14 @@ package com.example.tp318.model;
 
 import jakarta.persistence.*;
 import java.util.List;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Category {
     @Id
     private String idCategory;
 
+    @NotBlank(message = "Le nom de la catégorie est obligatoire")
     @Column(nullable = false)
     private String nomCategory;
 
